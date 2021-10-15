@@ -1,30 +1,31 @@
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import NoteForm from '../components/NoteForm'
 
-const Modal = ({modal, submitUserAction, hide}) => {
+const Modal = ({modal, store, update, hide}) => {
     if (!modal.visible) return ''
 
     const submit = data => {
         if (modal.note) {
-            submitUserAction(modal.type, {id: modal.note.id, data})
+            update(modal.note.id, data)
         } else {
-            submitUserAction(modal.type, data)
+            store(data)
         }
         hide()
     }
 
     return (
-    <div className="modal-wrapper">
-        <div className="modal-block">
-            <div className="close-btn-block">
-                <button className="close-btn-modal" 
-                onClick={() => hide()}>Close</button>
-            </div>
-            <div>
-                {modal.type === 'view' ? '' : <NoteForm note={modal.note} onSubmit={submit}/> }
+        <div className="modal-wrapper">
+            <div className="modal-block">
+                <div className="close-btn-block">
+                    <button className="close-btn-modal"
+                            onClick={() => hide()}>Close
+                    </button>
+                </div>
+                <div>
+                    {modal.type === 'view' ? '' : <NoteForm note={modal.note} onSubmit={submit}/>}
+                </div>
             </div>
         </div>
-    </div>
     )
 }
 
@@ -36,7 +37,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        submitUserAction: (action, payload) => dispatch({type: `notes/${action}`, payload}),
+        store: payload => dispatch({type: 'notes/add', payload}),
+        update: (id, data) => dispatch({type: 'notes/update', payload: {id, data}}),
         hide: () => dispatch({type: 'modal/hide'})
     }
 }

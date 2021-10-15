@@ -1,24 +1,25 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faShoppingCart, faBrain, faLightbulb} from '@fortawesome/free-solid-svg-icons'
+import {faBrain, faLightbulb, faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+import {labels, types} from '../enums/categories'
 
 const CategoryRow = ({name}) => {
 
     let icon
     let text
     switch (name) {
-        case 'task':
+        case types.Task:
             icon = faShoppingCart
-            text = 'Task'
+            text = labels[types.Task]
             break
 
-        case 'thought':
+        case types.RandomThough:
             icon = faBrain
-            text = 'Random Thought'
+            text = labels[types.RandomThough]
             break
 
-        case 'idea':
+        case types.Idea:
             icon = faLightbulb
-            text = 'Idea'
+            text = labels[types.Idea]
             break
 
         default:
@@ -27,26 +28,26 @@ const CategoryRow = ({name}) => {
     }
 
     return (
-      <div className="item-row"> 
+        <div className="item-row">
 
-      <div className="item-icon-category item-cell">
-        <div className="icon-wrapper">
-          <FontAwesomeIcon icon={icon}/>
+            <div className="item-icon-category item-cell">
+                <div className="icon-wrapper">
+                    <FontAwesomeIcon icon={icon}/>
+                </div>
+            </div>
+
+            <div className="item-notecategory item-cell">
+                {text}
+            </div>
+
+            <div className="item-active item-cell counter-cell">
+                0
+            </div>
+
+            <div className="item-archived item-cell counter-cell">
+                0
+            </div>
         </div>
-      </div>   
-
-      <div className="item-notecategory item-cell">
-        {text}
-      </div>
-
-      <div className="item-active item-cell counter-cell">
-        0
-      </div>
-
-      <div className="item-archived item-cell counter-cell">
-        0
-      </div>
-    </div>
     )
 }
 

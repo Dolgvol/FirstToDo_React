@@ -1,18 +1,19 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faShoppingCart, faBrain, faLightbulb} from '@fortawesome/free-solid-svg-icons'
+import {faBrain, faLightbulb, faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+import {types} from '../enums/categories'
 
 const NoteIcon = ({note}) => {
     let icon
     switch (note.category) {
-        case 'Task':
+        case types.Task:
             icon = faShoppingCart
             break
 
-        case 'Random Thought':
+        case types.RandomThough:
             icon = faBrain
             break
 
-        case 'Idea':
+        case types.Idea:
             icon = faLightbulb
             break
 
@@ -21,11 +22,11 @@ const NoteIcon = ({note}) => {
     }
 
     return (
-    <div className="item-icon item-cell">
-        <div className="icon-wrapper">
-            <FontAwesomeIcon icon={icon}/>
+        <div className="item-icon item-cell">
+            <div className="icon-wrapper">
+                {icon && <FontAwesomeIcon icon={icon}/>}
+            </div>
         </div>
-    </div>
     )
 }
 

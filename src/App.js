@@ -1,6 +1,6 @@
 import Modal from './containers/Modal'
-import FilterBlock from './components/FilterBlock'
-import NotesTable from './components/NotesTable'
+import FilterBlock from './containers/FilterBlock'
+import NotesTable from './containers/NotesTable'
 import CategoryTable from './components/CategoryTable'
 
 function App(props) {
