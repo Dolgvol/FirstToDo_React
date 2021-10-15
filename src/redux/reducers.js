@@ -65,23 +65,27 @@ const initialState = {
 
 initialState.notes = initialNotes.map((itemNote) => {
     return makeItem(itemNote);
- });
+ })
  
 
 const notesReducer = (state = initialState, action) => {
     switch (action.type) {
+        
         case 'notes/add':
             return {...state, notes: [...state.notes, makeItem(action.payload)]}
+        
         case 'notes/update':
             return {
                 ...state,
                 notes: state.notes.map(note => note.id === action.payload.id ? makeItem({...note, ...action.payload.data}) : note)
             }
+        
         case 'notes/delete':
             return {
                 ...state,
                 notes: state.notes.filter(note => note.id !== action.payload.id)
             }
+        
         case 'notes/deleteAll':
             if (action.payload.type === 'all') {
                 return {...state, notes: []}
@@ -92,10 +96,13 @@ const notesReducer = (state = initialState, action) => {
                     notes: state.notes.filter(note => note.active)
                 }
             }
-            return {
-                ...state,
-                notes: state.notes.filter(note => !note.active)
+            if (action.payload.type === 'archived') {
+                return {
+                    ...state,
+                    notes: state.notes.filter(note => !note.active)
+                }
             }
+        
         case 'notes/archiveAll':
             return {
                 ...state,
@@ -117,6 +124,7 @@ const notesReducer = (state = initialState, action) => {
                     note: action.payload.note || null
                 }
             }
+
         case 'modal/hide':
             return {
                 ...state,
@@ -124,6 +132,7 @@ const notesReducer = (state = initialState, action) => {
                     visible: false,
                 }
             }
+            
         default:
             return state
     }

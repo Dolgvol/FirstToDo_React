@@ -6,24 +6,27 @@ const NoteIcon = ({note}) => {
     switch (note.category) {
         case 'Task':
             icon = faShoppingCart
-            break;
+            break
 
         case 'Random Thought':
             icon = faBrain
-            break;
+            break
 
         case 'Idea':
             icon = faLightbulb
-            break;
+            break
+
         default:
             icon = null
     }
 
-    return <div className="item-icon item-cell">
+    return (
+    <div className="item-icon item-cell">
         <div className="icon-wrapper">
             <FontAwesomeIcon icon={icon}/>
         </div>
     </div>
+    )
 }
 
 export default NoteIcon

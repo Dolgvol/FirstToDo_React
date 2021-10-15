@@ -1,9 +1,10 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faDownload, faEye, faPen, faTrash, faUpload} from '@fortawesome/free-solid-svg-icons'
-import NoteIcon from "./NoteIcon";
+import NoteIcon from './NoteIcon'
 
 const NoteRow = ({note, onView, onEdit, onDelete}) => {
-    return <div className={`item-row ${note.active ? 'active' : 'archived'}`}>
+    return (
+    <div className={`item-row ${note.active ? 'active' : 'archived'}`}>
         <NoteIcon note={note}/>
         <div className="item-name item-cell">{note.name}</div>
         <div className="item-created item-cell">{note.created}</div>
@@ -25,6 +26,7 @@ const NoteRow = ({note, onView, onEdit, onDelete}) => {
             </a>
         </div>
     </div>
+    )
 }
 
 export default NoteRow

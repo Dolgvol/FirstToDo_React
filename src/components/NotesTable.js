@@ -1,7 +1,7 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faDownload, faTrash} from '@fortawesome/free-solid-svg-icons'
 import {connect, useSelector} from 'react-redux'
-import NoteRow from "./NoteRow"
+import NoteRow from './NoteRow'
 
 const notesSelector = ({filter, notes}) => {
     if (filter === 'all') {
@@ -14,7 +14,8 @@ const notesSelector = ({filter, notes}) => {
 const NotesTable = (props) => {
     const notes = useSelector(notesSelector)
 
-    return <div className="table-main" id="table-main1">
+    return (
+    <div className="table-main" id="table-main1">
 
         <div className="head-row">
             <div className="head-icon head-cell"></div>
@@ -35,16 +36,24 @@ const NotesTable = (props) => {
 
 
         <div className="items">
-            {notes.map(note => <NoteRow key={note.id} note={note} onView={() => props.showModal('view')}
-                                        onEdit={() => props.showModal('edit')}
-                                        onDelete={() => props.delete(note.id)}/>)}
+            {notes.map(note => {
+                <NoteRow key={note.id} note={note} 
+                onView={() => props.showModal('view')}
+                onEdit={() => props.showModal('edit')}
+                onArchivate={() => {}}
+                onActivate={() => {}}
+                onDelete={() => props.delete(note.id)}/>
+                }
+            )}
         </div>
 
         <div className="create-btn-block">
-            <button className="create-btn" onClick={() => props.showModal('add')}>Create Note</button>
+            <button className="create-btn" 
+            onClick={() => props.showModal('add')}>Create Note</button>
         </div>
 
     </div>
+    )
 }
 
 const mapStateToProps = (state) => {

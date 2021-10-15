@@ -13,16 +13,19 @@ const Modal = ({modal, submitUserAction, hide}) => {
         hide()
     }
 
-    return <div className="wrapper-view">
-        <div className="modal-view">
+    return (
+    <div className="modal-wrapper">
+        <div className="modal-block">
             <div className="close-btn-block">
-                <button className="close-btn-modal" onClick={() => hide()}>Close</button>
+                <button className="close-btn-modal" 
+                onClick={() => hide()}>Close</button>
             </div>
             <div>
                 {modal.type === 'view' ? '' : <NoteForm note={modal.note} onSubmit={submit}/> }
             </div>
         </div>
     </div>
+    )
 }
 
 const mapStateToProps = (state) => {

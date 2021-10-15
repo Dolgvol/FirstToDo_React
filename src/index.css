@@ -101,7 +101,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: end;
-  margin-left: auto
+  margin-left: auto;
+  font-size: 20px;
+  color: #ffffff;
 }
 
 .table-main .head-row .head-managment .archive-all {
@@ -151,6 +153,8 @@ body {
   width: 40px;
   border-radius: 50%;
   background-color: #777777;
+  font-size: 20px;
+  color: #ffffff;
 }
 
 .table-main .item-row .item-name {
@@ -189,7 +193,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: end;
-  margin-left: auto
+  margin-left: auto;
+  font-size: 20px;
+  color: #777777;
 }
 
 .table-main .item-row .item-managment .managment-icon  {
@@ -281,6 +287,8 @@ body {
   width: 40px;
   border-radius: 50%;
   background-color: #777777;
+  font-size: 20px;
+  color: #ffffff;
 }
 
 .table-category .item-row .item-notecategory {
@@ -298,7 +306,7 @@ body {
 
 
 
-.wrapper-view {
+.modal-wrapper {
   position: fixed;
   left: 0;
   right: 0;
@@ -308,7 +316,7 @@ body {
   background-color: #55555573;
 }
 
-.wrapper-view .modal-view {
+.modal-wrapper .modal-block {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -322,146 +330,112 @@ body {
   word-wrap: break-word;
 }
 
-.wrapper-view .modal-view .close-btn-block {
+.modal-wrapper .modal-block .close-btn-block {
   display: flex;
   align-items: center;
   justify-content: end;
   min-height: 30px;
 }
 
-.wrapper-view .modal-view .close-btn-block .close-btn-modal {
+.modal-wrapper .modal-block .close-btn-block .close-btn-modal {
   cursor: pointer;
 }
 
 
-.wrapper-view .modal-view .view-created {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  min-height: 20px;
-}
 
-.wrapper-view .modal-view .view-created .head-created {
-  font-size: 14px;
-  color: #555555;
-  margin-right: 30px;
-}
+  .view-created {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    min-height: 20px;
+  }
 
-
-.wrapper-view .modal-view .view-title {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  min-height: 60px;
-  margin-bottom: 10px;
-}
-
-.wrapper-view .modal-view .view-title .icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background-color: #777777;
-}
-
-.wrapper-view .modal-view .view-title .view-category {
-  margin-left: 40px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.wrapper-view .modal-view .view-name {
-  min-height: 40px;
-  padding: 10px 0;
-  text-align: center;
-  font-size: 18px;
-}
-
-.wrapper-view .modal-view .view-content {
-  min-height: 100px;
-  padding: 10px 0;
-}
-
-.wrapper-view .modal-view .view-dates {
-  margin-bottom: 5px;
-}
+    .view-created .head-created {
+      font-size: 14px;
+      color: #555555;
+      margin-right: 30px;
+    }
 
 
+    .view-title {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      min-height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .view-title .icon-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: #777777;
+    }
+
+    .view-title .view-category {
+      margin-left: 40px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .view-name {
+      min-height: 40px;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .view-content {
+      min-height: 100px;
+      padding: 10px 0;
+    }
+
+    .view-dates {
+      margin-bottom: 5px;
+    }
 
 
-.wrapper-edit {
-  display: none;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 10;
-  background-color: #55555573;
-}
-
-.wrapper-edit .modal-edit {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  min-height: 600px;
-  max-height: max-content;
-  min-width: 50%;
-  z-index: 20;
-  background-color: #ffffff;
-  padding: 20px 30px;
-}
 
 
-.wrapper-edit .modal-edit .close-btn-block {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  min-height: 30px;
-}
-
-.wrapper-edit .modal-edit .close-btn-block .close-btn-modal {
-  cursor: pointer;
-}
 
 
-.wrapper-edit .modal-edit .edit-form {
-  max-width: max-content;
-  margin: 0 auto;
-}
+  .edit-form {
+    max-width: max-content;
+    margin: 0 auto;
+  }
 
-.wrapper-edit .modal-edit .edit-form .edit-lable {
-  display: block;
-  font-size: 14px;
-  color: #555555;
-  margin: 20px 0 3px 0;
-}
+    .edit-form .edit-lable {
+      display: block;
+      font-size: 14px;
+      color: #555555;
+      margin: 20px 0 3px 0;
+    }
 
-.wrapper-edit .modal-edit .edit-form .edit-category {
-  display: block;
-  cursor: pointer;
-}
+    .edit-form .edit-category {
+      display: block;
+      cursor: pointer;
+    }
 
-.wrapper-edit .modal-edit .edit-form .edit-name {
-  min-height: 40px;
-  width: 400px;
-}
+    .edit-form .edit-name {
+      min-height: 40px;
+      width: 400px;
+    }
 
-.wrapper-edit .modal-edit .edit-form .edit-content {
-  min-height: 200px;
-  width: 400px;
-}
+    .edit-form .edit-content {
+      min-height: 200px;
+      width: 400px;
+    }
 
-.wrapper-edit .modal-edit .edit-form .submit-block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0 0;
-}
+    .edit-form .submit-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px 0 0;
+    }
 
-.wrapper-edit .modal-edit .edit-form .submit-block .submit-btn {
-  cursor: pointer;
-}
+      .edit-form .submit-block .submit-btn {
+        cursor: pointer;
+      }
