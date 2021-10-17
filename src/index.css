@@ -366,6 +366,8 @@ body {
     width: 40px;
     border-radius: 50%;
     background-color: #777777;
+    font-size: 20px;
+    color: #ffffff;
 }
 
 .view-title .view-category {
@@ -389,6 +391,7 @@ body {
 .view-dates {
     margin-bottom: 5px;
 }
+
 
 
 .edit-form {

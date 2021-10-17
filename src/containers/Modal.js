@@ -1,5 +1,7 @@
 import {connect} from 'react-redux'
 import NoteForm from '../components/NoteForm'
+import NoteView from '../components/NoteView'
+
 
 const Modal = ({modal, store, update, hide}) => {
     if (!modal.visible) return ''
@@ -22,7 +24,7 @@ const Modal = ({modal, store, update, hide}) => {
                     </button>
                 </div>
                 <div>
-                    {modal.type === 'view' ? '' : <NoteForm note={modal.note} onSubmit={submit}/>}
+                    {modal.type === 'view' ? <NoteView note={modal.note}/> : <NoteForm note={modal.note} onSubmit={submit}/>}
                 </div>
             </div>
         </div>

@@ -3,6 +3,9 @@ import CategoryRow from './CategoryRow'
 
 const CategoryTable = (props) => {
 
+
+
+
     return (
         <div className="table-category">
 

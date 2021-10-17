@@ -1,5 +1,6 @@
 import {types} from '../enums/filters'
 
+
 export const notesSelector = ({filter, notes}) => {
     switch (filter) {
         case types.All:
@@ -11,3 +12,21 @@ export const notesSelector = ({filter, notes}) => {
             return notes.filter(note => !note.active)
     }
 }
+
+
+export const filterNotes = (state) => {
+
+    const inputArray = state.notes
+    const objOfArrays = {}
+ 
+    inputArray.forEach((object) => {
+       if (objOfArrays.hasOwnProperty(object.category)) {
+          objOfArrays[object.category].push(object)
+       } else {
+          objOfArrays[object.category] = [object]
+       }
+    })
+    return objOfArrays
+ }
+
+ 
